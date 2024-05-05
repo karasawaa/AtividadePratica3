@@ -8,12 +8,14 @@ public abstract class Funcionario {
     private float horasTrab;
 
     public Funcionario() {
-        matricula = 6528;
-        nome = "José Almeida";
-        valorHora = 50.9f;
-        horasTrab = 180;
     }
 
+    public Funcionario(int matricula, String nome, float valorHora, float horasTrab) {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.valorHora = valorHora;
+        this.horasTrab = horasTrab;
+    }
 
     public int getMatricula() {
         return matricula;
@@ -31,27 +33,21 @@ public abstract class Funcionario {
         this.nome = nome;
     }
 
-    
-
     public float getValorHora() {
         return valorHora;
     }
-
 
     public void setValorHora(float valorHora) {
         this.valorHora = valorHora;
     }
 
-
     public float getHorasTrab() {
         return horasTrab;
     }
 
-
     public void setHorasTrab(float horasTrab) {
         this.horasTrab = horasTrab;
     }
-
 
     @Override
     public String toString() {

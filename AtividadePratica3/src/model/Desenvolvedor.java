@@ -5,8 +5,11 @@ public class Desenvolvedor extends Funcionario implements FolhaPagamento {
     private String tecnologias;
 
     public Desenvolvedor() {
-        super(); 
-        tecnologias = "Java, C++, Javascript, SQL e Html";
+    }
+
+    public Desenvolvedor(int matricula, String nome, float valorHora, float horasTrab, String tecnologias) {
+        super(matricula, nome, valorHora, horasTrab);
+        this.tecnologias = tecnologias;
     }
 
     public String getTecnologias() {

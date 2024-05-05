@@ -5,11 +5,14 @@ public class Estagiario extends Funcionario implements FolhaPagamento {
     private String supervisor;
     //horas de trabalho todos os funcionário já tem!
 
-    public Estagiario() {
-        super(); 
-        supervisor = "José Almeida";
+    public Estagiario(){
     }
-    
+
+    public Estagiario(int matricula, String nome, float valorHora, float horasTrab, String supervisor) {
+        super(matricula, nome, valorHora, horasTrab);
+        this.supervisor = supervisor;
+    }
+
     @Override
     public String toString() {
         

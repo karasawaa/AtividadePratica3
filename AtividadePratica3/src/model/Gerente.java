@@ -6,15 +6,17 @@ public class Gerente extends Funcionario implements FolhaPagamento {
     private String equipe;
 
     public Gerente() {
-        super(); 
-        equipe = "Equipe 1";
-        bonus = 3.0f;
+    }
+
+    public Gerente(int matricula, String nome, float valorHora, float horasTrab, float bonus, String equipe) {
+        super(matricula, nome, valorHora, horasTrab);
+        this.bonus = bonus;
+        this.equipe = equipe;
     }
 
     public float getBonus() {
         return bonus;
     }
-
 
     public void setBonus(float bonus) {
         this.bonus = bonus;
