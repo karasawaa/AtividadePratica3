@@ -1,7 +1,5 @@
 package view;
 
-import java.util.ArrayList;
-
 import controller.CadastroGerentes;
 import controller.CadastroDesenvolvedores;
 import controller.CadastroEstagiarios;
@@ -229,6 +227,7 @@ public class Sistema {
 
     //10
     private static void buscarGerente() {
+        int opc;
 
         if (verificarListaGerentesVazia("\nNão há gerentes cadastrados")) {
             return;
@@ -248,10 +247,34 @@ public class Sistema {
         System.out.println("\nGerente localizado:");
         System.out.println(g.toString());
 
+        do{
+            System.out.println("0) Voltar");
+            System.out.println("1) Trabalhar");
+            System.out.println("2) Relatar Progresso");
+            System.out.print("Escolha: ");
+            opc = Console.lerInt();
+            System.out.println();
+
+            switch (opc) {
+                case 0: 
+
+                    break;
+                case 1:
+                    System.out.println(g.trabalhar()); 
+                    break;
+                case 2: 
+                    System.out.println(g.relatarProgresso());
+                    break;
+                default:
+                    System.out.println("Opcão Invalida\n");
+                    break;
+            }
+        } while (opc!= 0 && opc != 1);
     }
 
     //11
     private static void buscarDesenvolvedor() {
+        int opc;
 
         if (verificarListaDesenvolvedoresVazia("\nNão há desenvolvedores cadastrados")) {
             return;
@@ -271,10 +294,35 @@ public class Sistema {
         System.out.println("\nDesenvolvedor localizado:");
         System.out.println(d.toString());
 
+        do{
+            System.out.println("0) Voltar");
+            System.out.println("1) Trabalhar");
+            System.out.println("2) Relatar Progresso");
+            System.out.print("Escolha: ");
+            opc = Console.lerInt();
+            System.out.println();
+
+            switch (opc) {
+                case 0: 
+
+                    break;
+                case 1:
+                    System.out.println(d.trabalhar()); 
+                    break;
+                case 2: 
+                    System.out.println(d.relatarProgresso());
+                    break;
+                default:
+                    System.out.println("Opcão Invalida\n");
+                    break;
+            }
+        } while (opc!= 0 && opc != 1);
     }
+    
 
     //12
     private static void buscarEstagiario() {
+        int opc; 
 
         if (verificarListaEstagiariosVazia("\nNão há estagiários cadastrados")) {
             return;
@@ -294,7 +342,31 @@ public class Sistema {
         System.out.println("\nEstagiário localizado:");
         System.out.println(e.toString());
 
+        do{
+            System.out.println("0) Voltar");
+            System.out.println("1) Trabalhar");
+            System.out.println("2) Relatar Progresso");
+            System.out.print("Escolha: ");
+            opc = Console.lerInt();
+            System.out.println();
+
+            switch (opc) {
+                case 0: 
+
+                    break;
+                case 1:
+                    System.out.println(e.trabalhar()); 
+                    break;
+                case 2: 
+                    System.out.println(e.relatarProgresso());
+                    break;
+                default:
+                    System.out.println("Opcão Invalida\n");
+                    break;
+            }
+        } while (opc!= 0 && opc != 1);
     }
+    
 
     private static void verificarOpcao(int op) {
 

@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 
 import model.Desenvolvedor;
+import model.Funcionario;
 
 public class CadastroDesenvolvedores {
 
@@ -21,17 +22,27 @@ public class CadastroDesenvolvedores {
         return listaDesenvolvedores.isEmpty(); 
     }
 
-        public static Desenvolvedor buscarDesenvolvedor(int matricula) {
+    public static Desenvolvedor buscarDesenvolvedor(int matricula) {
 
-            for(Desenvolvedor tempDesenvolvedor : listaDesenvolvedores) {
+        for(Desenvolvedor tempDesenvolvedor : listaDesenvolvedores) {
 
-                if (tempDesenvolvedor.getMatricula() == matricula) {
-                    return tempDesenvolvedor;
-                }
+            if (tempDesenvolvedor.getMatricula() == matricula) {
+                return tempDesenvolvedor;
             }
-
-            return null;
-
         }
+
+        return null;
+    }
+
+    public static boolean removerDesenvolvedor(int id) {
+
+        for (Funcionario temporario : listaDesenvolvedores) {
+            if(temporario.getMatricula() == id) {
+                listaDesenvolvedores.remove(temporario);
+                return true;
+            }
+        }
+        return false;
+    }
 }
 

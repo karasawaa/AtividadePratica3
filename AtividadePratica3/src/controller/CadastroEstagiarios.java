@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 
 import model.Estagiario;
+import model.Funcionario;
 
 public class CadastroEstagiarios {
 
@@ -21,16 +22,26 @@ public class CadastroEstagiarios {
         return listaEstagiarios.isEmpty(); 
     }
 
-        public static Estagiario buscarEstagiario(int matricula) {
+    public static Estagiario buscarEstagiario(int matricula) {
 
-            for(Estagiario tempEstagiario : listaEstagiarios) {
+        for(Estagiario tempEstagiario : listaEstagiarios) {
 
-                if (tempEstagiario.getMatricula() == matricula) {
-                    return tempEstagiario;
-                }
+            if (tempEstagiario.getMatricula() == matricula) {
+                return tempEstagiario;
             }
-
-            return null;
-
         }
+
+        return null;
+    }
+    
+    public static boolean removerEstagiario(int id) {
+
+        for (Funcionario temporario : listaEstagiarios) {
+            if(temporario.getMatricula() == id) {
+                listaEstagiarios.remove(temporario);
+                return true;
+            }
+        }
+        return false;
+    }
 }

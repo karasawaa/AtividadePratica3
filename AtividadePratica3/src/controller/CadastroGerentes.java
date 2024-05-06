@@ -22,16 +22,26 @@ public class CadastroGerentes {
         return listaGerentes.isEmpty(); 
     }
 
-        public static Gerente buscarGerente(int matricula) {
+    public static Gerente buscarGerente(int matricula) {
 
-            for(Gerente tempGerente : listaGerentes) {
+        for(Gerente tempGerente : listaGerentes) {
 
-                if (tempGerente.getMatricula() == matricula) {
-                    return tempGerente;
-                }
+            if (tempGerente.getMatricula() == matricula) {
+                return tempGerente;
             }
-
-            return null;
-
         }
+
+        return null;
+        }
+    
+    public static boolean removerGerente(int id) {
+
+        for (Funcionario temporario : listaGerentes) {
+            if(temporario.getMatricula() == id) {
+                listaGerentes.remove(temporario);
+                return true;
+            }
+        }
+        return false;
+    }
 }
