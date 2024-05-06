@@ -319,7 +319,6 @@ public class Sistema {
         } while (opc!= 0 && opc != 1);
     }
     
-
     //12
     private static void buscarEstagiario() {
         int opc; 
