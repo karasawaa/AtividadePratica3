@@ -1,6 +1,6 @@
 package model;
 
-public class Estagiario extends Funcionario implements FolhaPagamento {
+public class Estagiario extends Funcionario implements FolhaPagamento, Trabalhavel {
     
     private String supervisor;
     //horas de trabalho todos os funcionário já tem!
@@ -26,5 +26,16 @@ public class Estagiario extends Funcionario implements FolhaPagamento {
         return valorHora * getHorasTrab();
     }
 
+    @Override 
+    public String trabalhar() {
+        String text = "O Estagiario " + getNome() + " está com o Supervisor " + supervisor + " realizando um trabalho";
+        return text;
+    }
+
+    @Override 
+    public String relatarProgresso() {
+        String text = "Segundo o Supervisor " + supervisor + ", o estagiário " + getNome() + " está se saindo muito bem";
+        return text;
+    }
 
 }

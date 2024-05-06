@@ -1,6 +1,6 @@
 package model;
 
-public class Gerente extends Funcionario implements FolhaPagamento {
+public class Gerente extends Funcionario implements FolhaPagamento, Trabalhavel {
     
     private float bonus;
     private String equipe;
@@ -44,4 +44,15 @@ public class Gerente extends Funcionario implements FolhaPagamento {
         return (valorHora * getHorasTrab()) + (bonus * getHorasTrab());
     }
    
+    @Override 
+    public String trabalhar() {
+        String text = "O Gerente " + getNome() + " iniciou o gerenciamento do " + equipe;
+        return text;
+    }
+
+    @Override
+    public String relatarProgresso() {
+        String text = "Segundo o " + getNome() + ", o trabalho atual do time " + equipe + " está em 50%";
+        return text;
+    }
 }

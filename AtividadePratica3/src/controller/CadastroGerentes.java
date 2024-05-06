@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 
+import model.Funcionario;
 import model.Gerente;
 
 public class CadastroGerentes {
