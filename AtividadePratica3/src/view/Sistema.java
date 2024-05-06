@@ -153,6 +153,72 @@ public class Sistema {
         System.out.println("\nEstagiário Cadastrado com sucesso!");
     }
 
+    //4
+    private static void removerGerente() {
+
+        if (verificarListaGerentesVazia("\nNão há gerentes cadastrados")) {
+            return;
+        }
+
+        System.out.println("\nInforme a matrícula do gerente:");
+        int matricula = Console.lerInt();
+
+        Gerente g = CadastroGerentes.buscarGerente(matricula);
+
+        if (g == null) {
+            System.out.println("\nGerente " + matricula +
+                    " não cadastrado");
+            return;
+        }
+
+        CadastroGerentes.removerGerente(g.getMatricula());
+        System.out.println("Gerente Removido");
+    }
+
+    //5
+    private static void removerDesenvolvedor() {
+
+        if (verificarListaDesenvolvedoresVazia("\nNão há desenvolvedores cadastrados")) {
+            return;
+        }
+
+        System.out.println("\nInforme a matrícula do desenvolvedor:");
+        int matricula = Console.lerInt();
+
+        Desenvolvedor d = CadastroDesenvolvedores.buscarDesenvolvedor(matricula);
+
+        if (d == null) {
+            System.out.println("\nDesenvolcedor " + matricula +
+                    " não cadastrado");
+            return;
+        }
+
+        CadastroDesenvolvedores.removerDesenvolvedor(d.getMatricula());
+        System.out.println("Desenvolvedor Removido");
+    }
+
+    //6
+    private static void removerEstagiario() {
+
+        if (verificarListaEstagiariosVazia("\nNão há estagiários cadastrados")) {
+            return;
+        }
+
+        System.out.println("\nInforme a matrícula do estagiário que será removido:");
+        int matricula = Console.lerInt();
+
+        Estagiario e = CadastroEstagiarios.buscarEstagiario(matricula);
+
+        if (e == null) {
+            System.out.println("\nEstagiário " + matricula +
+                    " não cadastrado");
+            return;
+        }
+
+        CadastroEstagiarios.removerEstagiario(e.getMatricula());
+        System.out.println("Estagiário Removido");
+    }
+
     //7
     private static void listarGerentes() {
 
@@ -383,14 +449,13 @@ public class Sistema {
                 break;
 
             case 4:
-                
+                removerGerente();
                 break;
             case 5:
-                
+                removerDesenvolvedor();
                 break;
-
             case 6:
-            
+                removerEstagiario();
                 break;
             case 7:
                 listarGerentes();    
