@@ -200,6 +200,101 @@ public class Sistema {
         }
     }
 
+    private static boolean verificarListaGerentesVazia(String msg) {
+        if (CadastroGerentes.listaGerentesVazia()) {
+            System.out.println(msg);
+            return true;
+        }
+    
+        return false;
+    }
+    
+    private static boolean verificarListaEstagiariosVazia(String msg) {
+        if (CadastroEstagiarios.listaEstagiariosVazia()) {
+            System.out.println(msg);
+            return true;
+        }
+    
+        return false;
+    }
+    
+    private static boolean verificarListaDesenvolvedoresVazia(String msg) {
+        if (CadastroDesenvolvedores.listaDesenvolvedoresVazia()) {
+            System.out.println(msg);
+            return true;
+        }
+    
+        return false;
+    }
+
+    //10
+    private static void buscarGerente() {
+
+        if (verificarListaGerentesVazia("\nNão há gerentes cadastrados")) {
+            return;
+        }
+
+        System.out.println("\nInforme a matrícula do gerente:");
+        int matricula = Console.lerInt();
+
+        Gerente g = CadastroGerentes.buscarGerente(matricula);
+
+        if (g == null) {
+            System.out.println("\nGerente " + matricula +
+                    " não cadastrado");
+            return;
+        }
+
+        System.out.println("\nGerente localizado:");
+        System.out.println(g.toString());
+
+    }
+
+    //11
+    private static void buscarDesenvolvedor() {
+
+        if (verificarListaDesenvolvedoresVazia("\nNão há desenvolvedores cadastrados")) {
+            return;
+        }
+
+        System.out.println("\nInforme a matrícula do desenvolvedor:");
+        int matricula = Console.lerInt();
+
+        Desenvolvedor d = CadastroDesenvolvedores.buscarDesenvolvedor(matricula);
+
+        if (d == null) {
+            System.out.println("\nDesenvolcedor " + matricula +
+                    " não cadastrado");
+            return;
+        }
+
+        System.out.println("\nDesenvolvedor localizado:");
+        System.out.println(d.toString());
+
+    }
+
+    //12
+    private static void buscarEstagiario() {
+
+        if (verificarListaEstagiariosVazia("\nNão há estagiários cadastrados")) {
+            return;
+        }
+
+        System.out.println("\nInforme a matrícula do estagiário:");
+        int matricula = Console.lerInt();
+
+        Estagiario e = CadastroEstagiarios.buscarEstagiario(matricula);
+
+        if (e == null) {
+            System.out.println("\nEstagiário " + matricula +
+                    " não cadastrado");
+            return;
+        }
+
+        System.out.println("\nEstagiário localizado:");
+        System.out.println(e.toString());
+
+    }
 
     private static void verificarOpcao(int op) {
 
@@ -220,18 +315,29 @@ public class Sistema {
                 
                 break;
             case 5:
-                listarGerentes();
+                
                 break;
 
             case 6:
-                listarDesenvolvedores();
+            
                 break;
             case 7:
+                listarGerentes();    
+                break;
+            case 8:
+                listarDesenvolvedores();
+                break;
+            case 9:
                 listarEstagiarios();
                 break;
-
-            case 8:
-                
+            case 10:
+                buscarGerente();
+                break;
+            case 11:
+                buscarDesenvolvedor();
+                break;
+            case 12:
+                buscarEstagiario();
                 break;
             case 0:
                 System.out.println("\nO sistema foi finalizado...");
